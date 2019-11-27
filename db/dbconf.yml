@@ -1,0 +1,9 @@
+testing:
+    driver: postgres
+    open: user=sustainable dbname=sustainable_tests sslmode=disable
+development:
+    driver: postgres
+    open: user=sustainable dbname=sustainable sslmode=disable
+production:
+    driver: postgres
+    open: user=sustainable host=postgres dbname=sustainable sslmode=disable
