@@ -32,7 +32,7 @@ func productWorker(id int, chann chan string, signal chan int, wg *sync.WaitGrou
 			log.Printf("fetch product: %v", err)
 			continue
 		}
-		f, err := os.Create(fmt.Sprintf("./hmmens/product_%s.json", code))
+		f, err := os.Create(fmt.Sprintf("./brands/hm/dump/hmmens/product_%s.json", code))
 		if err != nil {
 			log.Printf("file create: %v", err)
 			continue
@@ -68,7 +68,7 @@ func Products() {
 	}
 
 	// read in the dump
-	f, _ := os.Open("./dump/hm_mens.json")
+	f, _ := os.Open("./brands/hm/dump/hm_mens.json")
 
 	type article struct {
 		Code string `json:"articleCode"`

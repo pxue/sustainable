@@ -14,6 +14,8 @@ type Database struct {
 	Product  ProductStore
 	Supplier SupplierStore
 	Factory  FactoryStore
+	Material MaterialStore
+	BCI      BCIStore
 }
 
 // configuration for db (postgres)
@@ -60,6 +62,8 @@ func NewDB(conf DBConf) (*Database, error) {
 	db.Product = ProductStore{db.Store(&Product{})}
 	db.Supplier = SupplierStore{db.Store(&Supplier{})}
 	db.Factory = FactoryStore{db.Store(&Factory{})}
+	db.Material = MaterialStore{db.Store(&Material{})}
+	db.BCI = BCIStore{db.Store(&BCI{})}
 
 	DB = db
 	return db, nil

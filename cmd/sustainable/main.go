@@ -6,6 +6,8 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
+	"github.com/pxue/sustainable/bettercotton"
+	"github.com/pxue/sustainable/data"
 )
 
 func main() {
@@ -21,4 +23,6 @@ func main() {
 	if _, err := data.NewDB(dbConf); err != nil {
 		log.Fatal(errors.Wrap(err, "database: connection failed"))
 	}
+
+	bettercotton.Load()
 }

@@ -4,7 +4,8 @@ CREATE TABLE products (
     code text NOT NULL DEFAULT ''::text,
     category text NOT NULL,
     name text NOT NULL DEFAULT ''::text,
-    materials jsonb NOT NULL DEFAULT '{}'::jsonb
+    materials jsonb NOT NULL DEFAULT '{}'::jsonb,
+    price numeric(7,2) NOT NULL DEFAULT 0
 );
 
 -- Indices -------------------------------------------------------
@@ -59,11 +60,22 @@ CREATE UNIQUE INDEX ON product_suppliers(product_id int8_ops,supplier_id int8_op
 CREATE TABLE materials (
     id SERIAL PRIMARY KEY,
     name text NOT NULL DEFAULT ''::text,
-    msi_score bigint NOT NULL DEFAULT '0'::bigint,
-    msi_id bigint DEFAULT '0'::bigint
+    "type" text NOT NULL DEFAULT ''::text,
+    msi_score bigint NOT NULL DEFAULT '0'::bigint
 );
 
 -- Indices -------------------------------------------------------
 
 CREATE UNIQUE INDEX ON materials(id int4_ops);
 
+
+CREATE TABLE bci_members (
+    id SERIAL PRIMARY KEY,
+    name text NOT NULL DEFAULT ''::text,
+    category text NOT NULL DEFAULT ''::text,
+    country text NOT NULL DEFAULT ''::text,
+    website text NOT NULL DEFAULT ''::text,
+    since timestamptz NOT NULL DEFAULT now()
+);
+
+-- Indices -------------------------------------------------------

@@ -24,6 +24,12 @@ type product struct {
 		Name string `json:"name"`
 	} `json:"mainCategory"`
 	ArticlesList []*variant `json:"articlesList"`
+	WhitePrice   *price     `json:"whitePrice"`
+}
+
+type price struct {
+	Price    float64 `json:"price"`
+	Currency string  `json:"currency"`
 }
 
 type variant struct {
@@ -145,35 +151,36 @@ func DoSupplier() {
 func DoProduct() {
 	// parse all the products.
 	// read in the dump
-	files, err := ioutil.ReadDir("./dump/hmmens")
+	files, err := ioutil.ReadDir("./brands/hm/dump/hmmens")
 	if err != nil {
 		log.Fatal(err)
 	}
 	for _, fnfo := range files {
-		f, _ := os.Open("./dump/hmmens/" + fnfo.Name())
+		f, _ := os.Open("./brands/hm/dump/hmmens/" + fnfo.Name())
 
 		var p product
 		if err := json.NewDecoder(f).Decode(&p); err != nil {
 			log.Fatal(err)
 		}
 
-		dbProduct := &data.Product{
+		product := &data.Product{
 			Name:      p.Name,
 			Code:      p.Code,
 			Category:  p.MainCategory.Name,
+			Price:     p.WhitePrice.Price,
 			Materials: data.ProductMaterial{},
 		}
 
 		for _, variant := range p.ArticlesList {
 			for _, compo := range variant.Compositions {
 				for _, m := range compo.Materials {
-					dbProduct.Materials[m.Name], _ = strconv.ParseFloat(m.Percentage, 64)
+					product.Materials[m.Name], _ = strconv.ParseFloat(m.Percentage, 64)
 				}
 			}
 			break
 		}
 
-		if err := data.DB.Product.Save(dbProduct); err != nil {
+		if err := data.DB.Product.Save(product); err != nil {
 			log.Printf("db error: %v", err)
 		}
 	}
