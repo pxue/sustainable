@@ -35,7 +35,7 @@ CREATE TABLE factories (
     name text NOT NULL DEFAULT ''::text,
     country text NOT NULL DEFAULT ''::text,
     address text NOT NULL DEFAULT ''::text,
-    hm_id text NOT NULL DEFAULT ''::text
+    code text NOT NULL DEFAULT ''::text
 );
 
 -- Indices -------------------------------------------------------

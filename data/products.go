@@ -12,6 +12,7 @@ type Product struct {
 	Category  string          `db:"category"`
 	Materials ProductMaterial `db:"materials"`
 	Price     float64         `db:"price"`
+	Brand     string          `db:"brand"`
 }
 
 type ProductMaterial map[string]float64
