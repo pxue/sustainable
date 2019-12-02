@@ -20,11 +20,32 @@ Next steps:
 
 - Expand to more transparent brands.
 
+## A-Z Brands and their factory lists.
+If you wish to help expand this list, please reference the [Fashion Transparency Index](https://issuu.com/fashionrevolution/docs/fashion_transparency_index_2019) and Google any of the brands not yet part of this list to find their factory lists.
+
+- Adidas
+    - [Factory list](https://www.adidas-group.com/en/sustainability/compliance/supply-chain-structure/)
+- Asos
+	- [Factory list](https://www.asosplc.com/corporate-responsibility/our-products/our-supply-chain)
+- Gap
+	- [Factory list](https://www.gapincsustainability.com/sites/default/files/Gap%20Inc%20Factory%20List.pdf)
+- H&M Group
+  	- [Factory list](https://sustainability.hm.com/en/sustainability/downloads-resources/resources/supplier-list.html)
+- Nike
+	- [Factory list](http://manufacturingmap.nikeinc.com/)
+- Patagonia
+	- [Factory list](https://www.patagonia.com/footprint.html)
+- Uniqlo
+	- [Factory list](https://www.fastretailing.com/eng/sustainability/labor/list.html)
+- VF Corporation 
+    - [Brand list](https://www.vfc.com/brands)
+  	- [Factory list](https://sustainability.vfc.com/resources/factory-list-map)
+
+
 ## Contributing
 
 I'd love your help. Want contribute to this project? Open an issue and start
 coding! I'll try to keep everything up to date.
-
 
 ## License
 
