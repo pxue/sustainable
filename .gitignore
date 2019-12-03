@@ -5,6 +5,8 @@
 yarn.lock
 *.zip
 
+sustainable
+
 bin
 
 # dependencies

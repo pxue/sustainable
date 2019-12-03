@@ -7,9 +7,10 @@ import { HeatmapLayer } from "@deck.gl/aggregation-layers";
 
 // Set your mapbox token here
 const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
+const API_URL = process.env.ApiUrl; // eslint-disable-line
 
 // Source data GeoJSON
-const DATA_URL = "http://localhost:8082/visual"; // eslint-disable-line
+const DATA_URL = `${API_URL}/visual`; // eslint-disable-line
 
 const INITIAL_VIEW_STATE = {
   longitude: -100,

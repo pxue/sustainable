@@ -33,6 +33,6 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html"
     }),
-    new webpack.EnvironmentPlugin(["MapboxAccessToken"])
+    new webpack.EnvironmentPlugin(["MapboxAccessToken", "ApiUrl"])
   ]
 };
