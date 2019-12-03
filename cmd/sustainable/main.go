@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"math/rand"
+	"os"
 	"time"
 
 	"github.com/pkg/errors"
@@ -46,11 +47,17 @@ func GetFactoryCoords() {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
+	// environment configs
+	postgresHost := os.Getenv("POSTGRES_HOST")
+	if postgresHost == "" {
+		postgresHost = "localhost"
+	}
+
 	dbConf := data.DBConf{
 		Database:        "sustainable",
-		Hosts:           []string{"localhost"},
+		Hosts:           []string{postgresHost},
 		Username:        "sustainable",
-		ApplicationName: "test",
+		ApplicationName: "sustainable",
 		DebugQueries:    true,
 	}
 	if _, err := data.NewDB(dbConf); err != nil {
