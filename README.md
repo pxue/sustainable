@@ -42,6 +42,10 @@ If you wish to help expand this list, please reference the [Fashion Transparency
   	- [Factory list](https://sustainability.vfc.com/resources/factory-list-map)
 
 
+## Visualization
+
+[![visual](https://i.imgur.com/cakin2S.jpg)](https://sustainable-visual.mannr.co)
+
 ## Contributing
 
 I'd love your help. Want contribute to this project? Open an issue and start
