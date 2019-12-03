@@ -8,6 +8,11 @@ COPY package.json /app/package.json
 RUN yarn --silent
 RUN yarn global add webpack --silent
 
+ARG MapboxAccessToken pk.eyJ1IjoicHh1ZSIsImEiOiJjazNqYmZxNXcwaGZsM3BvM203dndoYm5sIn0.-pf2_7SDCpWeMGgRw9UHGw
+ENV MapboxAccessToken $MapboxAccessToken
+ARG ApiUrl https://sustainable-api.mannr.co
+ENV ApiUrl $ApiUrl
+
 COPY . /app
 RUN yarn build
 
