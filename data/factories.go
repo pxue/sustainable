@@ -6,12 +6,14 @@ import (
 )
 
 type Factory struct {
-	ID         int64  `db:"id,omitempty"`
-	SupplierID *int64 `db:"supplier_id,omitempty"`
-	Code       string `db:"code"`
-	Name       string `db:"name"`
-	Address    string `db:"address"`
-	Country    string `db:"country"`
+	ID         int64   `db:"id,omitempty"`
+	SupplierID *int64  `db:"supplier_id,omitempty"`
+	Code       string  `db:"code"`
+	Name       string  `db:"name"`
+	Address    string  `db:"address"`
+	Country    string  `db:"country"`
+	Lat        float64 `db:"lat"`
+	Lon        float64 `db:"lon"`
 }
 
 type FactoryStore struct {
