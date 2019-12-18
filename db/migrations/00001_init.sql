@@ -1,3 +1,13 @@
+CREATE TABLE brands (
+    id SERIAL PRIMARY KEY,
+    name text NOT NULL DEFAULT ''::text,
+    factory_link text NOT NULL DEFAULT '':text
+);
+
+-- Indices -------------------------------------------------------
+
+CREATE UNIQUE INDEX ON brands(id int4_ops);
+
 -- Table Definition ----------------------------------------------
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,

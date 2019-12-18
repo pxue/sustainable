@@ -11,6 +11,7 @@ import (
 type Database struct {
 	bond.Session
 
+	Brand    BrandStore
 	Product  ProductStore
 	Supplier SupplierStore
 	Factory  FactoryStore
@@ -64,6 +65,7 @@ func NewDB(conf DBConf) (*Database, error) {
 	db.Factory = FactoryStore{db.Store(&Factory{})}
 	db.Material = MaterialStore{db.Store(&Material{})}
 	db.BCI = BCIStore{db.Store(&BCI{})}
+	db.Brand = BrandStore{db.Store(&Brand{})}
 
 	DB = db
 	return db, nil

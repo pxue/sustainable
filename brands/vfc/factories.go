@@ -1,0 +1,4 @@
+package vfc
+
+func Factories() {
+}

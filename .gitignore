@@ -1,13 +1,14 @@
 .DS_Store
 
+dumps/
 *.json
 !package.json
 yarn.lock
 *.zip
 
-sustainable
-
 bin
+
+vendor
 
 # dependencies
 node_modules
